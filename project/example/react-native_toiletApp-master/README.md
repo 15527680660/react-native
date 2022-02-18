@@ -186,7 +186,7 @@ react-native bundle --entey-file index.ios.js --platform ios --dev false --bndle
 
 
 
-
+## url https://github.com/forrest23/react-native_toiletApp
 
 
 
