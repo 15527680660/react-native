@@ -18,3 +18,7 @@ Be sure to subscribe to our YouTube channel for more videos like this!
   <img src="https://contributors-img.web.app/image?repo=byprogrammers/lets-code-react-native" />
 </a>
 
+## https://github.com/byprogrammers/LCRN08-food-delivery-app
+
+## video https://www.youtube.com/watch?v=diUDjNwZ8Lg&list=PLyqjM4oNXf5PG5iARwWdoEeDW65uPOH-K&index=35&t=1800s
+
