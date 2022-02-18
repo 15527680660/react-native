@@ -1,0 +1,34 @@
+{
+  "Display": "React Native Elements",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@react-native-elements/*": ["./packages/*/src"]
+    },
+    "composite": true,
+    "declaration": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-native",
+    "lib": ["esnext", "dom"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noStrictGenericChecks": false,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "target": "esnext",
+    "allowJs": true
+  },
+  "exclude": [
+    "node_modules",
+    "website",
+    "example",
+    "packages/*/.ci",
+    "packages/*/src/**/__tests__"
+  ]
+}

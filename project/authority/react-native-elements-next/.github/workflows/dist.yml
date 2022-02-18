@@ -1,0 +1,44 @@
+name: Build and Deploy next version
+on:
+  push:
+    branches:
+      - "next"
+    paths-ignore:
+      - "website/**"
+      - "example/**"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js Env
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      # - name: Cache Dependencies
+      #   uses: actions/cache@v2
+      #   id: rne-dist-deploy
+      #   with:
+      #     path: node_modules
+      #     key: ${{ runner.os }}-rne-dist-deploy-${{ hashFiles('**/yarn.lock') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-rne-dist-deploy-
+      - name: Install Dependencies
+        # if: steps.rne-dist-deploy.outputs.cache-hit != 'true' # Over here!
+        run: yarn
+      - name: Build packages
+        run: yarn build
+      - name: Create local changes
+        run: |
+          sed -i -e '/dist/d' .gitignore
+      - name: Config git
+        run: |
+          git config --local user.email "react-native-elements-ci@users.noreply.github.com"
+          git config --local user.name "React Native Elements CI"
+      - name: Deploy '@react-native-elements/base'
+        run: |
+          git push origin `git subtree split --prefix packages/base -b base`:refs/heads/base --force
+      # - name: Deploy '@react-native-elements/universe'
+      #   run: |
+      #     git push origin `git subtree split --prefix packages/universe -b base`:refs/heads/universe --force

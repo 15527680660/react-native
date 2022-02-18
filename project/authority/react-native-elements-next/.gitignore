@@ -1,0 +1,15 @@
+dist/
+node_modules
+.DS_Store
+*.log
+site
+coverage
+jsconfig.json
+.vscode/
+.idea/
+website/build
+package-lock.json
+build
+*.orig
+.docgen/
+.expo/*
